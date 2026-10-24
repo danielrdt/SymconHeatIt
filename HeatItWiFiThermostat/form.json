@@ -1,0 +1,83 @@
+{
+    "elements": [
+        {
+            "type": "ValidationTextBox",
+            "name": "Host",
+            "caption": "IP-Adresse / Hostname des Thermostats"
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "Port",
+            "caption": "Port",
+            "minimum": 1,
+            "maximum": 65535
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "UpdateInterval",
+            "caption": "Abfrageintervall",
+            "suffix": "Sekunden",
+            "minimum": 10,
+            "maximum": 3600
+        },
+        {
+            "type": "NumberSpinner",
+            "name": "Timeout",
+            "caption": "Timeout",
+            "suffix": "Sekunden",
+            "minimum": 2,
+            "maximum": 30
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "Optionale Variablen",
+            "items": [
+                {
+                    "type": "CheckBox",
+                    "name": "ShowFloor",
+                    "caption": "Bodentemperatur (Bodenfühler)"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "ShowExternal",
+                    "caption": "Externe Temperatur (externer Fühler)"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "ShowAdvanced",
+                    "caption": "Erweiterte Einstellungen (Kindersicherung, Fenster-offen-Erkennung, Display, Fühlermodus, Regelung, Hysterese)"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Button",
+            "caption": "Status jetzt abrufen",
+            "onClick": "HEATITWIFI_Update($id);"
+        },
+        {
+            "type": "Button",
+            "caption": "Energiezähler (kWh) zurücksetzen",
+            "confirm": "Den Energiezähler im Thermostat wirklich auf 0 zurücksetzen?",
+            "onClick": "HEATITWIFI_ResetEnergy($id);"
+        }
+    ],
+    "status": [
+        {
+            "code": 102,
+            "icon": "active",
+            "caption": "Thermostat erreichbar"
+        },
+        {
+            "code": 104,
+            "icon": "inactive",
+            "caption": "Keine Host-Adresse konfiguriert"
+        },
+        {
+            "code": 201,
+            "icon": "error",
+            "caption": "Thermostat nicht erreichbar oder ungültige Antwort"
+        }
+    ]
+}

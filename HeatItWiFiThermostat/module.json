@@ -1,0 +1,12 @@
+{
+    "id": "{C652AAC9-EE4F-47D5-BD70-1385E3351954}",
+    "name": "HeatIt WiFi Thermostat",
+    "type": 3,
+    "vendor": "Heatit",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "HEATITWIFI",
+    "url": ""
+}
